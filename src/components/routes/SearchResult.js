@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ImageItem from '../ImageItem';
 
 export default class SearchResult extends Component {
   constructor(props) {
@@ -16,9 +17,10 @@ export default class SearchResult extends Component {
       <div>
         {
           this.items.map((item, index) => (
-            <div key={index}>
-
-            </div>
+            <ImageItem
+              key={index}
+              itemData={item.data[0]}
+              url={item.href} />
           ))
         }
       </div>
