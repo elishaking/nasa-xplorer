@@ -1,59 +1,17 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
-
-const imagesUrl = 'https://images-api.nasa.gov';
+import Landing from './components/routes/Landing';
+import SearchResult from './components/routes/SearchResult';
 
 export default class App extends Component {
-  state = {
-    searchTerm: ''
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-
-    const { searchTerm } = this.state;
-    axios.get(`${imagesUrl}/search?q=${searchTerm}`)
-      .then((res) => {
-        console.log(res.data);
-      });
-  };
-
-  onChange = (e) => {
-    this.setState({
-      searchTerm: e.target.value
-    });
-  };
 
   render() {
-    const { searchTerm } = this.state;
-
     return (
-      <div className="app">
-        <header>
-          <nav>
-            <h1>Nasa<span>Xplorer</span></h1>
-          </nav>
-        </header>
-
-        <div className="content">
-          <h1 className="headline">Xplore the wonders of the Universe</h1>
-
-          <form onSubmit={this.onSubmit}>
-            <input
-              type="text"
-              name="searchTerm"
-              placeholder="e.g. moon, mars, jupiter, etc"
-              onChange={this.onChange}
-              value={searchTerm} />
-
-            <div className="actions">
-              <input type="submit" value="Search" />
-              <input type="button" value="Today's Special" />
-            </div>
-          </form>
-        </div>
-      </div>
-    )
+      <Router>
+        <Route path="/" component={Landing} exact />
+        <Route path="/search" component={SearchResult} exact />
+      </Router>
+    );
   }
 }
