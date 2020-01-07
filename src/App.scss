@@ -1,3 +1,23 @@
 .app {
-  //
+  padding: 5em 10vw;
+  height: 100vh;
+  background-image: url(./assets/images/earth-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      font-weight: normal;
+
+      span {
+        color: #3470b9;
+        font-weight: 900;
+      }
+    }
+  }
 }
