@@ -15,6 +15,7 @@ export default class Landing extends Component {
     axios.get(`${imagesUrl}/search?q=${searchTerm}`)
       .then((res) => {
         console.log(res.data);
+        this.props.history.push('/search', { data: res.data });
       });
   };
 
