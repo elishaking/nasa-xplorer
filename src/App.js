@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.scss';
+
+const imagesUrl = 'https://images-api.nasa.gov';
 
 export default class App extends Component {
   state = {
     searchTerm: ''
   };
 
-  onSubmit = () => {
+  onSubmit = (e) => {
+    e.preventDefault();
 
+    const { searchTerm } = this.state;
+    axios.get(`${imagesUrl}/search?q=${searchTerm}`)
+      .then((res) => {
+        console.log(res.data);
+      });
   };
 
   onChange = (e) => {
