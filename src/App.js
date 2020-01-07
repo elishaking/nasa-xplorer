@@ -10,6 +10,12 @@ export default class App extends Component {
 
   };
 
+  onChange = (e) => {
+    this.setState({
+      searchTerm: e.target.value
+    });
+  };
+
   render() {
     const { searchTerm } = this.state;
 
@@ -26,13 +32,15 @@ export default class App extends Component {
 
           <form onSubmit={this.onSubmit}>
             <input
+              type="text"
               name="searchTerm"
               placeholder="e.g. moon, mars, jupiter, etc"
+              onChange={this.onChange}
               value={searchTerm} />
 
             <div className="actions">
               <input type="submit" value="Search" />
-              <input type="button" value="Today" />
+              <input type="button" value="Today's Special" />
             </div>
           </form>
         </div>

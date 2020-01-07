@@ -20,4 +20,63 @@
       }
     }
   }
+
+  .content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .headline {
+      font-size: 3em;
+      text-align: center;
+    }
+
+    input[type=text] {
+      padding: 1em 2em;
+      margin: 4em 0 2em 0;
+      width: 80vw;
+      max-width: 500px;
+      font-size: large;
+      outline: none;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      background-color: rgba($color: #fff, $alpha: .13);
+      color: #fff;
+      caret-color: #fff;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-evenly;
+
+      input[type=submit],
+      input[type=button] {
+        padding: 1em 2em;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0 0 30px 7px rgba($color: #fff, $alpha: .3);
+        cursor: pointer;
+        font-family: inherit;
+        font-weight: bold;
+        transition: 0.3s ease-in-out;
+      }
+
+      input[type=submit] {
+        background-color: #3470b9;
+        color: #fff;
+      }
+
+      input[type=submit]:hover,
+      input[type=button]:hover {
+        opacity: 0.8;
+      }
+    }
+
+    ::placeholder {
+      color: rgba($color: #fff, $alpha: .5);
+    }
+  }
 }
