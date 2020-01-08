@@ -21,13 +21,18 @@ export default class ImageItem extends Component {
     const { itemData } = this.props;
     const { imageUrl } = this.state;
 
+    console.log(itemData);
+
     return (
       <div className="image-item">
         <header>
           <h2>{itemData.title}</h2>
           {
             itemData.description !== itemData.title && (
-              <p>{itemData.description}</p>
+              (itemData.description.indexOf('/>') !== -1 || itemData.description.indexOf('</')) !== -1 ?
+                (<p dangerouslySetInnerHTML={{ __html: itemData.description }}></p>) : (
+                  <p>{itemData.description}</p>
+                )
             )
           }
         </header>
