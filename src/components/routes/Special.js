@@ -9,9 +9,12 @@ export default class Special extends Component {
 
     return (
       <Container className="special">
-        <h2>{data.title}</h2>
-        <p>{data.explanation}</p>
-        <img src={data.url} alt="" />
+        <div className="fixed-bg"></div>
+        <div className="content">
+          <h2>{data.title}</h2>
+          <p>{data.explanation}</p>
+          <img src={data.url} alt="" />
+        </div>
       </Container>
     )
   }
