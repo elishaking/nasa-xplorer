@@ -16,14 +16,18 @@ export default class SearchResult extends Component {
   render() {
     return (
       <Container className="search-result">
-        {
-          this.items.map((item, index) => (
-            <ImageItem
-              key={index}
-              itemData={item.data[0]}
-              url={item.href} />
-          ))
-        }
+        <div className="fixed-bg"></div>
+
+        <div className="content">
+          {
+            this.items.map((item, index) => (
+              <ImageItem
+                key={index}
+                itemData={item.data[0]}
+                url={item.href} />
+            ))
+          }
+        </div>
       </Container>
     )
   }

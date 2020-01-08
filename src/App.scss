@@ -81,6 +81,12 @@
 
 .search-result {
   background-color: #000;
+
+  .content {
+    position: relative;
+    z-index: 1;
+    font-size: 123%;
+  }
 }
 
 .special {
