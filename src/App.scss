@@ -83,6 +83,23 @@
   background-color: #000;
 }
 
+.special {
+  text-align: center;
+  background-color: #000;
+  min-height: 100vh;
+
+  p {
+    margin: 1em 0 2em 0;
+  }
+
+  img {
+    width: 80vw;
+    max-width: 700px;
+    border: 2px solid rgba($color: #fff, $alpha: 0.9);
+    border-radius: 13px;
+  }
+}
+
 .spinner {
   font-size: 2.7em;
   animation: loading 0.7s linear infinite forwards;

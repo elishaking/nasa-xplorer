@@ -15,7 +15,7 @@ export default class Landing extends Component {
     const { searchTerm } = this.state;
     axios.get(`${imagesUrl}/search?q=${searchTerm}`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.props.history.push('/search', { data: res.data });
       });
   };
@@ -25,6 +25,13 @@ export default class Landing extends Component {
       searchTerm: e.target.value
     });
   };
+
+  todaysSpecial = () => {
+    axios.get(`https://api.nasa.gov/planetary/apod?api_key=aYpJeaaiCPeZ0Vno5VggoG4iyieKfh7dEN8HPszh`)
+      .then((res) => {
+        this.props.history.push('/special', { data: res.data });
+      });
+  }
 
   render() {
     const { searchTerm } = this.state;
@@ -50,7 +57,7 @@ export default class Landing extends Component {
 
             <div className="actions">
               <input type="submit" value="Search" />
-              <input type="button" value="Today's Special" />
+              <input type="button" value="Today's Special" onClick={this.todaysSpecial} />
             </div>
           </form>
         </div>

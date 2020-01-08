@@ -10,7 +10,7 @@ export default class SearchResult extends Component {
 
     this.items = this.data.collection.items
       .filter(item => item.data[0].media_type === 'image').slice(0, 10);
-    console.log(this.items);
+    // console.log(this.items);
   }
 
   render() {
