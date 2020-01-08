@@ -1,11 +1,9 @@
-.app {
-  padding: 5em 10vw;
+.landing {
   height: 100vh;
   background-image: url(./assets/images/earth-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color: white;
 
   nav {
     display: flex;
@@ -79,6 +77,10 @@
       color: rgba($color: #fff, $alpha: .5);
     }
   }
+}
+
+.search-result {
+  background-color: #000;
 }
 
 .spinner {

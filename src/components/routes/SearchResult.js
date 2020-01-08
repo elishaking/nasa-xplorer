@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ImageItem from '../ImageItem';
+import Container from '../Container';
 
 export default class SearchResult extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ export default class SearchResult extends Component {
 
   render() {
     return (
-      <div>
+      <Container className="search-result">
         {
           this.items.map((item, index) => (
             <ImageItem
@@ -23,7 +24,7 @@ export default class SearchResult extends Component {
               url={item.href} />
           ))
         }
-      </div>
+      </Container>
     )
   }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Container from '../Container';
 
 const imagesUrl = 'https://images-api.nasa.gov';
 
@@ -29,7 +30,7 @@ export default class Landing extends Component {
     const { searchTerm } = this.state;
 
     return (
-      <div className="app">
+      <Container className="landing">
         <header>
           <nav>
             <h1>Nasa<span>Xplorer</span></h1>
@@ -53,7 +54,7 @@ export default class Landing extends Component {
             </div>
           </form>
         </div>
-      </div>
+      </Container>
     )
   }
 }
