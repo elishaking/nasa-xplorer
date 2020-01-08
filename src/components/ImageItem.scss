@@ -2,13 +2,27 @@
   margin-bottom: 3em;
   text-align: center;
 
-  h2 {
-    margin-bottom: 0.3em;
+  header {
+    margin-bottom: 1em;
+
+    p {
+      margin-top: 0.5em;
+    }
+  }
+
+  .image-placeholder {
+    height: 80vw;
+    max-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #070707;
   }
 
   img {
     width: 80vw;
     max-width: 500px;
+    border: 2px solid rgba($color: #fff, $alpha: 0.9);
     border-radius: 13px;
   }
 }

@@ -23,7 +23,15 @@ export default class ImageItem extends Component {
 
     return (
       <div className="image-item">
-        <h2>{itemData.title}</h2>
+        <header>
+          <h2>{itemData.title}</h2>
+          {
+            itemData.description !== itemData.title && (
+              <p>{itemData.description}</p>
+            )
+          }
+        </header>
+
         {
           imageUrl === '' ? (
             <div className="image-placeholder">
