@@ -127,6 +127,7 @@
 
 .spinner {
   font-size: 2.7em;
+  transition: 0.5s ease-in-out;
   animation: loading 0.7s linear infinite forwards;
 }
 

@@ -1,13 +1,14 @@
 import React from 'react';
 
-export default function Spinner({ full = true, padding = true }) {
+export default function Spinner({ full = true, padding = true, height = '1em', style = {} }) {
   return (
     <div style={{
+      ...style,
       display: full ? "block" : "inline-block",
       textAlign: "center",
       padding: padding ? "1em" : "0"
     }}>
-      <svg className="spinner" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 595.44 595.44">
+      <svg className="spinner" xmlns="http://www.w3.org/2000/svg" width="1em" height={height} viewBox="0 0 595.44 595.44">
         <defs>
           <linearGradient id="linear-gradient" x1="0.646" y1="0.068" x2="0.96" y2="0.811" gradientUnits="objectBoundingBox">
             <stop offset="0" stopColor="#000" />

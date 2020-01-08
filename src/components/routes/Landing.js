@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Container from '../Container';
+import Spinner from '../Spinner';
 
 const imagesUrl = 'https://images-api.nasa.gov';
 
 export default class Landing extends Component {
   state = {
-    searchTerm: ''
+    searchTerm: '',
+    loading: false
   };
 
   onSubmit = (e) => {
     e.preventDefault();
+
+    this.setState({ loading: true });
 
     const { searchTerm } = this.state;
     axios.get(`${imagesUrl}/search?q=${searchTerm}`)
       .then((res) => {
         // console.log(res.data);
         this.props.history.push('/search', { data: res.data });
+        this.setState({ loading: false });
+      })
+      .catch((err) => {
+        this.setState({ loading: false });
       });
   };
 
@@ -27,14 +35,16 @@ export default class Landing extends Component {
   };
 
   todaysSpecial = () => {
+    this.setState({ loading: true });
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=aYpJeaaiCPeZ0Vno5VggoG4iyieKfh7dEN8HPszh`)
       .then((res) => {
         this.props.history.push('/special', { data: res.data });
+        this.setState({ loading: false });
       });
   }
 
   render() {
-    const { searchTerm } = this.state;
+    const { searchTerm, loading } = this.state;
 
     return (
       <Container className="landing">
@@ -60,6 +70,14 @@ export default class Landing extends Component {
               <input type="button" value="Today's Special" onClick={this.todaysSpecial} />
             </div>
           </form>
+
+          <Spinner
+            height={loading ? '1em' : '0'}
+            style={{
+              margin: '2em'
+            }}
+          />
+
         </div>
       </Container>
     )
