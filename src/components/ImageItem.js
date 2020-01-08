@@ -12,7 +12,7 @@ export default class ImageItem extends Component {
     const url = this.props.url;
     axios.get(url).then((res) => {
       this.setState({
-        imageUrl: res.data[0]
+        imageUrl: res.data.filter(val => val.search(/(\.jpg)|(\.jpeg)|(\.png)/) > 0)[0]
       })
     });
   }
