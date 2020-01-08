@@ -21,7 +21,14 @@ export default class ImageItem extends Component {
     const { itemData } = this.props;
     const { imageUrl } = this.state;
 
-    console.log(itemData);
+    // console.log(itemData);
+
+    // let description = '';
+    // if(itemData.description !== itemData.title){
+    //   description = itemData.description;
+
+    //   if(description.length )
+    // }
 
     return (
       <div className="image-item">
