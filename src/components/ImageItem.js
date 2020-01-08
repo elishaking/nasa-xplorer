@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './ImageItem.scss';
+import Spinner from './Spinner';
 
 export default class ImageItem extends Component {
   state = {
@@ -20,9 +22,15 @@ export default class ImageItem extends Component {
     const { imageUrl } = this.state;
 
     return (
-      <div>
+      <div className="image-item">
         <h2>{itemData.title}</h2>
-        <img src={imageUrl} alt="" />
+        {
+          imageUrl === '' ? (
+            <div className="image-placeholder">
+              <Spinner />
+            </div>
+          ) : (<img src={imageUrl} alt="" />)
+        }
       </div>
     )
   }
