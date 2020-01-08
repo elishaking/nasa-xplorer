@@ -5,7 +5,7 @@ export default class Special extends Component {
 
   render() {
     const { data } = this.props.location.state;
-    console.log(data);
+    // console.log(data);
 
     return (
       <Container className="special">
